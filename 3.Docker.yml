@@ -1,0 +1,9 @@
+- name: Installing Docker in Ansible nodes
+  hosts: all
+  become: true
+  tasks:
+     - name: Download a Docker
+       command: curl -fsSL https://get.docker.com -o get-docker.sh
+     - name: Run a Docker Script
+       command: sh get-docker.sh
+       

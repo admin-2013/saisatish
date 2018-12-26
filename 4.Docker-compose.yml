@@ -1,0 +1,35 @@
+- name: Install Docker-Compose
+  hosts: all
+  become: yes
+  tasks:
+   - name: Add docker group
+     group: 
+      name: docker 
+      state: present
+
+   - name: Add devops to docker group
+     user: 
+      name: devops
+      group: docker
+     become: yes
+     become_user: root 
+     become_method: sudo
+
+   - name: Get uname -s
+     command: "uname -s"
+     register: unames
+     tags: 
+      - with_compose
+
+   - name: Get uname -m
+     command: "uname -m"
+     register: unamem
+     tags: 
+      - with_compose
+
+   - name: install compose
+     command: "curl -L https://github.com/docker/compose/releases/download/1.11.2/docker-compose-Linux-x86_64 -o /usr/local/bin/docker-compose"
+
+   - name: Add execution rights to file
+     command: chmod +x /usr/local/bin/docker-compose
+   
