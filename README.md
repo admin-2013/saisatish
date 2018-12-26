@@ -1,4 +1,5 @@
 Create a aws Free Tair account and Launch a Ubuntu 16.04 LTS (t2.micro) instance and install Configuration Management Tool (Ansible) and Python also mandatory to perform configuration management activite in both Ansible Controller and Ansible Nodes. We have to establish a ssh connection between ansible controller and ansible nodes.
+
 !$$$$$$$
 1)Launch Ec2 Instance Using Ansible Playbook:
 
@@ -17,6 +18,7 @@ the instance will be created and configured. Make sure the host from which you a
 launch the EC2 instance. This playbook can run in only localhost machine where anible is installed.
 ####Run a palybook: ansible-playbook Launch-Instances.yml
 With the help of above command we can Launch a two instances (MSR-test-Instance-1 & MSR-test-Instance-2).
+
 !$$$$$$$
 2) Installing Software Packages
 
