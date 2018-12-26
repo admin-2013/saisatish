@@ -1,0 +1,40 @@
+- name: Create an EC2 instance
+  hosts: localhost
+  connection: local
+  become: yes
+  tasks:
+    - name: Launch ec2 instance MSR-test-Instance-1
+      ec2:
+         aws_access_key: AKIAIGSE6IH4EAJLLA6A
+         aws_secret_key: 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
+         instance_type: t2.micro
+         key_name: linux
+         image: ami-04ea996e7a3e7ad6b
+         region: ap-south-1
+         group: default
+         count: 1
+         vpc_subnet_id: subnet-d0fd239c
+         wait: yes
+         instance_tags:
+               Name: MSR-test-Instance-1
+         assign_public_ip: yes
+      register: ec2
+
+    - name: Launch ec2 instance MSR-test-Instance-2
+      ec2:
+         aws_access_key: AKIAIGSE6IH4EAJLLA6A
+         aws_secret_key: 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
+         instance_type: t2.micro
+         key_name: linux
+         image: ami-04ea996e7a3e7ad6b
+         region: ap-south-1
+         group: default
+         count: 1
+         vpc_subnet_id: subnet-d0fd239c
+         wait: yes
+         instance_tags:
+               Name: MSR-test-Instance-2
+         assign_public_ip: yes
+      register: ec2
+
+ 
