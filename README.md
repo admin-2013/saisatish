@@ -51,6 +51,10 @@ Command: openssl --version -a
 We can Check above git compose version is installed or not
 Command: git --version
 
+$$$$$$
+3) Push playbook in to git hub
+Create a Repositoey in local machine and initilze it (git init) and configure the username and email, and commit all changes in local repository, and finally pushes in to git hub (git push -u origin master).
+
 
 
 
