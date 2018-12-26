@@ -16,6 +16,7 @@ The statement “wait=yes” is used to let ansible wait for the instance to com
 variable so that we can run the query to find out different properties of the instance.By using these above tasks in the  ansible playbook
 the instance will be created and configured. Make sure the host from which you are running the playbook must have enough permissions to
 launch the EC2 instance. This playbook can run in only localhost machine where anible is installed.
+
 ####Run a palybook: ansible-playbook Launch-Instances.yml
 With the help of above command we can Launch a two instances (MSR-test-Instance-1 & MSR-test-Instance-2).
 
@@ -23,27 +24,32 @@ With the help of above command we can Launch a two instances (MSR-test-Instance-
 2) Installing Software Packages
 
 !!!For NVM-Version 0.33.2. Write a Ansibel to playbook to install nvm For this requirement i have use SHELL module in ansible and download the mvn.sh script and run on ansible nodes (MSR-test-Instance-1 & MSR-test-Instance-2). 
+
 ####Run a palybook: ansible-playbook 1.NVM-Version0.33.2.yml
 We can Check above NVM version is installed or not
 Command: Sudo su -
 Command: nvm--version 
 
 !!!For Node-8.12.0. Write a ansible playbook Install Node-8.12.0
+
 ####Run a palybook: ansible-playbook 2.Node-8.12.0.yml
 We can Check above Node version is installed or not
 Command: node --version
 
 !!!For Docker 18.06 or Latest. Write a playbook to install docker in ansible nodes. For this requirement i have used a COMMAND module in ansible to download the script fron get.docker.com and run it on ansible nodes.
+
 ####Run a palybook: ansible-playbook 3.Docker.yml
 We can Check above Docker version is installed or not
 Command: docker --version
 
 !!!For Docker Compose-1.13 or latest. Write a playbook to install Docker compose. For this requirement i have to take a command to install docker compose and execute this in a ansible command module nad give the permissions of the /usr/local/bin/docker-compose .
+
 ####Run a palybook: ansible-playbook 4.Docker-compose.yml
 We can Check above Docker compose version is installed or not
 Command: docker-compose --version
 
 !!!For Openssl-latest Version. Write a ansible playbook to install openssl. Download the openssl latest Version .tar file and extract it to ansible nodes. Using wget i can download it
+
 ####Run a palybook: ansible-playbook 5.OpenSSL.yml
 We can Check above Openssl compose version is installed or not
 Command: openssl --version -a
